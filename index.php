@@ -2,7 +2,7 @@
     <head>
     <meta charset="utf-8">
         <title>Hello Hello</title>
-    <head>
+    </head>
     <body>
         <h1>Nalunya Inthabutra</h1>
         <h2>Puii</h2>
@@ -15,6 +15,7 @@
         <br>
         <img src="pik.jpg">
         <img src="pik2.jpg">
-        
+       
     </body>
-</head>
+    
+ </html>

@@ -37,7 +37,7 @@ include("connect.php");
     Name:<br>
     <input type="text" name = "name" value="<?php echo $res['Name'];?>"> <br>
     Comment:<br>
-    <textarea rows="10" cols="20" name = "comment" placeholder="Enter Comment" value="<?php echo $res['Comment'];"></textarea><br>  
+    <textarea rows="10" cols="20" name = "comment" placeholder="Enter Comment" value="<?php echo $res['Comment'];?>"></textarea><br>  
     Link:<br>
     
     <input type="submit" name="submit">

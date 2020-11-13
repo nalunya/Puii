@@ -1,8 +1,9 @@
 
 <?php
- 
- if(isset($_POST['submit'])){
+include("connect.php");
     $id=$_GET['id'];
+ if(isset($_POST['submit'])){
+    
     $name = $_POST['name'];
     $comment = $_POST['comment'];
     $update = "UPDATE FROM `guestbook` SET `Name` = '".$id."' `Comment` = '".$comment."' WHERE `ID` = '".$id."'";

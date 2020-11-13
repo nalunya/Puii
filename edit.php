@@ -2,6 +2,9 @@
 <?php
 include("connect.php");
     $id=$_GET['id'];
+    $infosql = "SELECT * FROM guestbook";
+    $inforesult = mysqli_query($conn,$infosql);
+    $res = mysqli_fetch_array($inforesult;)
  if(isset($_POST['submit'])){
     
     $name = $_POST['name'];
@@ -31,7 +34,7 @@ include("connect.php");
     <body>
     <form method = "POST" id="CommentForm" >
     Name:<br>
-    <input type="text" name = "name"> <br>
+    <input type="text" name = "name" value="<?php echo $res['Name'];?>"> <br>
     Comment:<br>
     <textarea rows="10" cols="20" name = "comment" placeholder="Enter Comment"></textarea><br>  
     Link:<br>

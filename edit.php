@@ -4,13 +4,6 @@
  $sql = "SELECT FROM guestbook WHERE ID = '".$id."'";
  $result=mysqli_query($conn,$sql);
  $info = mysqli_fetch_array($result);
- 
-if(isset($_POST['submit'])){
-   
-    
-}else{
-    
-}
 ?>
 <html>
     <head>

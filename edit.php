@@ -16,7 +16,7 @@
     <body>
     <form method = "POST" id="CommentForm" >
     Name:<br>
-    <input type="text" name = "name" placeholder="Enter Name" value="<?php echo $info['Name'];?>"> <br>
+    <input type="text" name = "name" value="<?php echo $info['Name'];?>"> <br>
     Comment:<br>
     <textarea rows="10" cols="20" name = "comment" placeholder="Enter Comment"></textarea><br>  
     Link:<br>

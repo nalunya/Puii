@@ -3,7 +3,7 @@
  $id=$_GET['id'];
  $sql = "SELECT FROM guestbook WHERE ID = '".$id."'";
  $result=mysqli_query($conn,$sql);
- $info = mysqli_fetch_array($result);
+ $res = mysqli_fetch_array($result);
  echo $id;
 ?>
 <html>
@@ -17,7 +17,7 @@
     <body>
     <form method = "POST" id="CommentForm" >
     Name:<br>
-    <input type="text" name = "name" value="<?php echo $info['Name'];?>"> <br>
+    <input type="text" name = "name" value="<?php echo $res['Name'];?>"> <br>
     Comment:<br>
     <textarea rows="10" cols="20" name = "comment" placeholder="Enter Comment"></textarea><br>  
     Link:<br>

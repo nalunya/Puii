@@ -13,6 +13,7 @@ if (mysqli_connect_errno($conn))
 }
 $res = mysqli_query($conn, 'SELECT * FROM guestbook');
 ?>
+<br><br>
 <div class="container">
 
 <table width="100%" border="1">
@@ -29,14 +30,16 @@ while($Result = mysqli_fetch_array($res))
   <tr>
     <td><?php echo $Result['Name'];?></div></td>
     <td><?php echo $Result['Comment'];?></td>
-    <td><a  class="btn btn-info" href="delete.php?id=<?php echo $Result['ID'];?>">ลบ</a></td>
+    <td><a  class="btn btn-danger" href="delete.php?id=<?php echo $Result['ID'];?>">ลบ</a></td>
+    <td><a  class="btn btn-info" href="delete.php?id=<?php echo $Result['ID'];?>">แก้ไข</a></td>
   </tr>
 <?php
 }
 ?>
 </table>
+<br><br>
 <center>
-<a  class="btn btn-primary" href="form.html">เพิ่ม</a>
+<a  class="btn btn-success" href="form.html">เพิ่ม</a>
 <?php
 mysqli_close($conn);
 ?>

@@ -1,8 +1,9 @@
 <?php
 if(isset($_POST['submit'])){
-    echo "eiei";
+    $id=$_GET['id'];
+    $result = mysqli_query($conn, 'SELECT * FROM guestbook');
 }else{
-    echo "555+";
+    echo "<script>alert('error')</script>";
 }
 ?>
 <html>

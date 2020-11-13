@@ -8,10 +8,4 @@ if (mysqli_connect_errno($conn))
 ?>
 
 
-<html>
-   <head>
-    </head>
-    <body>
-        5555+
-        </body>
-</html>
+

@@ -1,20 +1,16 @@
-<?php
-include("connect.php");
-?>
 <html>
 <head>
 <title>ITF Lab</title>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 </head>
 <body>
-<div class="container">
 <?php
-$sql="SELECT * FROM guestbook";
-$result=mysqli_query($conn,$sql);
-if(mysqli_num_rows($result) > 0){
-  while(mysqli_fetch_array($result)){
-      $name = $result['Name'];
- 
+$conn = mysqli_init();
+mysqli_real_connect($conn, 'nalunya.mysql.database.azure.com', 'fa240145@nalunya', 'Puii240145', 'itflab', 3306);
+if (mysqli_connect_errno($conn))
+{
+    die('Failed to connect to MySQL: '.mysqli_connect_error());
+}
+$res = mysqli_query($conn, 'SELECT * FROM guestbook');
 ?>
 <table width="600" border="1">
   <tr>
@@ -27,18 +23,16 @@ while($Result = mysqli_fetch_array($res))
 {
 ?>
   <tr>
-    <td><?php echo $name ?></div></td>
+    <td><?php echo $Result['Name'];?></div></td>
     <td><?php echo $Result['Comment'];?></td>
     <td><a  class="btn btn-info" href="delete.php">ลบ</a></td>
   </tr>
 <?php
-  }
 }
 ?>
 </table>
 <?php
 mysqli_close($conn);
 ?>
-</div>
 </body>
 </html>

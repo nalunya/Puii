@@ -2,7 +2,7 @@
     include("connect.php");
     $id=$_GET['id'];
    
-    $sql="DELETE * FROM `guestbook` WHERE `ID` = '".$id."'";
+    $sql="DELETE * FROM `guestbook` WHERE `ID`='$id'";
     $result=mysqli_query($conn,$sql);
     
     if($result){

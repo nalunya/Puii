@@ -10,11 +10,11 @@
     
     if($result){
         echo "<script>alert('ลบเสร็จสิ้น')</script>";
-        echo "<script>window.location="show.php"</script>";
+        echo "<script>window.location='show.php'</script>";
 
     }else{
         echo "<script>alert('error')</script>";
-        echo "<script>window.location="show.php"</script>";
+        echo "<script>window.location='show.php'</script>";
 
     }
 

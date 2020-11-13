@@ -1,12 +1,22 @@
 
 <?php
  $id=$_GET['id'];
- $sql = "SELECT FROM guestbook WHERE ID = '".$id."'";
- $result=mysqli_query($conn,$sql);
-if(mysqli_num_rows($result) > 0){
-    $res = mysqli_fetch_array($result);
-}
- echo $id;
+ $name = $_POST['name'];
+ $comment = $_POST['comment'];
+ if(isset($_POST['submit'])){
+    $update = "UPDATE FROM `guestbook` SET `Name` = ".$id."' `Comment` = '".$comment."' WHERE `ID` = '".$id."'";
+    $result= mysqli_query($conn,$update);
+    if($result){
+        echo "<script>alert('แก้ไขเสร็จสิ้น')</script>";
+        echo "<script>window.location='show.php'</script>";
+
+    }else{
+        echo "<script>alert('error')</script>";
+        echo "<script>window.location='show.php'</script>";
+
+    }
+ }
+
 ?>
 <html>
     <head>
@@ -19,7 +29,7 @@ if(mysqli_num_rows($result) > 0){
     <body>
     <form method = "POST" id="CommentForm" >
     Name:<br>
-    <input type="text" name = "name" value="<?php echo $res['Name'];?>"> <br>
+    <input type="text" name = "name"> <br>
     Comment:<br>
     <textarea rows="10" cols="20" name = "comment" placeholder="Enter Comment"></textarea><br>  
     Link:<br>

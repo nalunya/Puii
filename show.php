@@ -30,7 +30,7 @@ while($Result = mysqli_fetch_array($res))
   <tr>
     <td><?php echo $Result['Name'];?></div></td>
     <td><?php echo $Result['Comment'];?></td>
-    <td><a  class="btn btn-danger" href="delete.php?id=<?php echo $Result['ID'];?>">ลบ</a> <a  class="btn btn-info" href="delete.php?id=<?php echo $Result['ID'];?>">แก้ไข</a></td>
+    <td><a  class="btn btn-danger" href="delete.php?id=<?php echo $Result['ID'];?>">ลบ</a> <a  class="btn btn-info" href="edit.php?id=<?php echo $Result['ID'];?>">แก้ไข</a></td>
     
   </tr>
 <?php

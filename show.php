@@ -13,6 +13,8 @@ if (mysqli_connect_errno($conn))
 }
 $res = mysqli_query($conn, 'SELECT * FROM guestbook');
 ?>
+<div class="conatiner">
+
 <table width="600" border="1">
   <tr>
     <th width="100"> <div align="center">Name</div></th>
@@ -33,9 +35,11 @@ while($Result = mysqli_fetch_array($res))
 }
 ?>
 </table>
+<center>
 <a  class="btn btn-primary" href="form.html">เพิ่ม</a>
 <?php
 mysqli_close($conn);
 ?>
+</div>
 </body>
 </html>

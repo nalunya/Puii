@@ -1,11 +1,13 @@
 
 <?php
  $id=$_GET['id'];
-    $sql = "SELECT FROM guestbook WHERE ID = '".$id."'";
-    $result=mysqli_query($conn,$sql);
+ $sql = "SELECT FROM guestbook WHERE ID = '".$id."'";
+ $result=mysqli_query($conn,$sql);
+ $info = mysqli_fetch_array($result);
+ 
 if(isset($_POST['submit'])){
    
-
+    
 }else{
     
 }
@@ -21,7 +23,7 @@ if(isset($_POST['submit'])){
     <body>
     <form method = "POST" id="CommentForm" >
     Name:<br>
-    <input type="text" name = "name" placeholder="Enter Name" value="<?php echo $result['Name'];?>"> <br>
+    <input type="text" name = "name" placeholder="Enter Name" value="<?php echo $info['Name'];?>"> <br>
     Comment:<br>
     <textarea rows="10" cols="20" name = "comment" placeholder="Enter Comment"></textarea><br>  
     Link:<br>

@@ -11,7 +11,10 @@ include("connect.php");
 <?php
 $sql="SELECT * FROM guestbook";
 $result=mysqli_query($conn,$sql);
-
+if(mysqli_num_rows($result) > 0){
+  while(mysqli_fetch_array($result)){
+      $name = $result['Name'];
+ 
 ?>
 <table width="600" border="1">
   <tr>
@@ -24,11 +27,12 @@ while($Result = mysqli_fetch_array($res))
 {
 ?>
   <tr>
-    <td><?php echo $Result['Name'];?></div></td>
+    <td><?php echo $name ?></div></td>
     <td><?php echo $Result['Comment'];?></td>
     <td><a  class="btn btn-info" href="delete.php">ลบ</a></td>
   </tr>
 <?php
+  }
 }
 ?>
 </table>

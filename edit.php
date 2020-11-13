@@ -5,11 +5,12 @@ include("connect.php");
     $infosql = "SELECT * FROM guestbook";
     $inforesult = mysqli_query($conn,$infosql);
     $res = mysqli_fetch_array($inforesult);
- if(isset($_POST['submit'])){
-    
     $name = $_POST['name'];
     $comment = $_POST['comment'];
-    $update = "UPDATE FROM `guestbook` SET `Name` = '".$id."' `Comment` = '".$comment."' WHERE `ID` = '".$id."'";
+ if(isset($_POST['submit'])){
+    
+    
+    $update = "UPDATE FROM guestbook SET `NAME` = '".$name."' AND `Comment` = '".$comment."' WHERE `ID` = '".$id."' ";
     $result= mysqli_query($conn,$update);
     if($result){
         echo "<script>alert('แก้ไขเสร็จสิ้น')</script>";

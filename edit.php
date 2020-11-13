@@ -4,6 +4,7 @@
  $sql = "SELECT FROM guestbook WHERE ID = '".$id."'";
  $result=mysqli_query($conn,$sql);
  $info = mysqli_fetch_array($result);
+ echo $id;
 ?>
 <html>
     <head>

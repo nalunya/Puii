@@ -5,7 +5,7 @@
     $id=$_GET['id'];
     $name = $_POST['name'];
     $comment = $_POST['comment'];
-    $update = "UPDATE FROM `guestbook` SET `Name` = ".$id."' `Comment` = '".$comment."' WHERE `ID` = '".$id."'";
+    $update = "UPDATE FROM `guestbook` SET `Name` = '".$id."' `Comment` = '".$comment."' WHERE `ID` = '".$id."'";
     $result= mysqli_query($conn,$update);
     if($result){
         echo "<script>alert('แก้ไขเสร็จสิ้น')</script>";

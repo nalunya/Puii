@@ -2,7 +2,7 @@
 <?php
 include("connect.php");
     $id=$_GET['id'];
-    $infosql = "SELECT * FROM guestbook";
+    $infosql = "SELECT * FROM guestbook WHERE ID = '".$id."'";
     $inforesult = mysqli_query($conn,$infosql);
     $res = mysqli_fetch_array($inforesult);
     $name = $_POST['name'];

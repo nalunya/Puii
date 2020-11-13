@@ -4,7 +4,7 @@ include("connect.php");
     $id=$_GET['id'];
     $infosql = "SELECT * FROM guestbook";
     $inforesult = mysqli_query($conn,$infosql);
-    $res = mysqli_fetch_array($inforesult;)
+    $res = mysqli_fetch_array($inforesult);
  if(isset($_POST['submit'])){
     
     $name = $_POST['name'];

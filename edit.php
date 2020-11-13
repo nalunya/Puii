@@ -3,7 +3,7 @@ if(isset($_POST['submit'])){
     $id=$_GET['id'];
     $result = mysqli_query($conn, 'SELECT * FROM guestbook');
 }else{
-    echo "<script>alert('error')</script>";
+    
 }
 ?>
 <html>

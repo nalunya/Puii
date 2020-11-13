@@ -1,9 +1,10 @@
 
 <?php
- $id=$_GET['id'];
- $name = $_POST['name'];
- $comment = $_POST['comment'];
+ 
  if(isset($_POST['submit'])){
+    $id=$_GET['id'];
+    $name = $_POST['name'];
+    $comment = $_POST['comment'];
     $update = "UPDATE FROM `guestbook` SET `Name` = ".$id."' `Comment` = '".$comment."' WHERE `ID` = '".$id."'";
     $result= mysqli_query($conn,$update);
     if($result){
@@ -33,7 +34,7 @@
     Comment:<br>
     <textarea rows="10" cols="20" name = "comment" placeholder="Enter Comment"></textarea><br>  
     Link:<br>
-    <input type="text" name = "link"placeholder="Enter Link"> <br><br>
+    
     <input type="submit" name="submit">
   </form> 
     </body>

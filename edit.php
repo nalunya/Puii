@@ -9,8 +9,7 @@ include("connect.php");
     $comment = $_POST['comment'];
  if(isset($_POST['submit'])){
     
-    
-    $update = "UPDATE * FROM `guestbook` SET `Name` = '".$name."' , `Comment` = '".$comment."' WHERE ID = '".$id."'";  
+    $update = "UPDATE `guestbook` SET `Name` = '".$name."', `Comment` = '".$comment."' WHERE `guestbook`.`ID` = '".$id."';";  
     $result= mysqli_query($conn,$update);
     if($result){
         echo "<script>alert('แก้ไขเสร็จสิ้น')</script>";

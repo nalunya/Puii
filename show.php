@@ -2,8 +2,12 @@
 <head>
 <title>ITF Lab</title>
 <style>
+  body{
+    background:#e1f2fb;
+  }
   table{
     color:#fff;
+    border:1px solid #fff;
   }
 </style>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
@@ -22,7 +26,7 @@ $res = mysqli_query($conn, 'SELECT * FROM guestbook');
 
 <div class="container">
 
-<table width="100%" border="1" style="text-align:center; background:#ffaaa5;">
+<table width="100%" border="1" style="text-align:center; background:#f7dad9;">
   <tr>
     <th width="100"> <div align="center">Name</div></th>
     <th width="350"> <div align="center">Comment </div></th>

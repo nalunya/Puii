@@ -2,7 +2,7 @@
 <head>
 <title>ITF Lab</title>
 <style>
-  th{
+  table{
     color:#fff;
   }
 </style>
@@ -22,7 +22,7 @@ $res = mysqli_query($conn, 'SELECT * FROM guestbook');
 
 <div class="container">
 
-<table width="100%" border="1" style="text-align:center; background:#f7dad9;">
+<table width="100%" border="1" style="text-align:center; background:#ffaaa5;">
   <tr>
     <th width="100"> <div align="center">Name</div></th>
     <th width="350"> <div align="center">Comment </div></th>

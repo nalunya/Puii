@@ -2,9 +2,7 @@
 <head>
 <title>ITF Lab</title>
 <style>
-  body{
-    background:#e1f2fb;
-  }
+  
   table{
     color:#fff;
     border:1px solid #fff;

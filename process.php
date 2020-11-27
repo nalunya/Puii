@@ -5,7 +5,7 @@
 
 $height1=number_format($height/100,2);
 $bmi=number_format($weight/($height1*$height1),2);
- $sql="INSERT INTO nwebook (name,height, weight,bmi)
+ $sql="INSERT INTO newbook (name,height, weight,bmi)
 VALUES ('".$name."', '".$height."', '".$weight."','".$bmi."')";
  $result=mysqli_query($conn,$sql);
  if($result){

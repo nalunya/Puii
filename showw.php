@@ -1,60 +1,56 @@
 <html>
 <head>
-    <title>ITF</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
-        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<title>ITF Lab</title>
+<style>
+  table{
+    color:#fff;
+    border:1px solid #fff;
+    padding:10px;
+  }
+</style>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 </head>
-    <body>
-    <?php
-$conn = mysqli_init();
-mysqli_real_connect($conn, 'nongpuii.mysql.database.azure.com', 'nongpuii@nongpuii', 'Fa240145', 'itflab', 3306);
-if (mysqli_connect_errno($conn))
-{
-    die('Failed to connect to MySQL: '.mysqli_connect_error());
-}
+<body>
+<?php
+include('connect.php')
+$res = mysqli_query($conn, 'SELECT * FROM newbook');
 ?>
-$res = mysqli_query($conn, 'SELECT * FROM itf');
-?>
-<br>
-<div class="container" bg-white mx-auto rounded-lg shadow mt-3 p-4 mb-3">
-    <table class = "table table-bordered table-hover" width="1500" align="center" border="1">
-        <thead class="thead-dark">
-    <tr>
-        <th width="300"> <div align="center">ชื่อ</div></th>
-        <th width="300"> <div align="center">น้ำหนัก</div></th>
-        <th width="300"> <div align="center">ส่วนสูง</div></th>
-        <th width="300"> <div align="center">bmi</div></th>
-        <th width="300"> <div align="center">การจัดการ</div></th>
-    </tr>
-    </thead>
+<br><br>
+
+<div class="container">
+
+<table width="100%" border="1" style="text-align:center; background:#f7dad9;">
+  <tr>
+    <th width="100"> <div align="center">Name</div></th>
+    <th width="350"> <div align="center">Height</div></th>
+    <th width="150"> <div align="center">Weight </div></th>
+<th>Bmi</th>
+<th>Action</th>
+  </tr>
 <?php
 while($Result = mysqli_fetch_array($res))
+       
 {
 ?>
-        <tbody>
-                <tr>
-            <td><?php echo $Result['name'];?></td>
-            <td><?php echo $Result['weight'];?></td>
-            <td><?php echo $Result['height'];?></td>
-            <td><?php echo $Result['bmi'];?></td>
-            <td align="center">
-                <a href="edit.php?ID=<?php echo $Result['ID']?>" class="btn btn-outline-success" >UPDATE</a>
-                </tr>
-        </tbody>
+  <tr>
+    <td><?php echo $Result['name'];?></div></td>
+    <td><?php echo $Result['height'];?></td>
+<td><?php echo $Result['weight'];></td>
+<td><?php echo $Result['bmi'];></td>
+    <td><a  class="<a  class="btn btn-info" href="edit.php?id=<?php echo $Result['id'];?>">แก้ไข</a></td>
+    
+  </tr>
 <?php
 }
 ?>
-    </table>
-    <button type="button" class="btn btn-outline-warning" onclick ="window.location.href='insert.php'">ADD</button> 
+</table>
+<br><br>
+<center>
+<a  class="btn btn-success" href="insert.html">เพิ่ม</a>
 <?php
 mysqli_close($conn);
 ?>
-    </body>
+</div>
+</body>
 </html>

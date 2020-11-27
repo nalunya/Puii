@@ -20,7 +20,7 @@ if (mysqli_connect_errno($conn))
     die('Failed to connect to MySQL: '.mysqli_connect_error());
 }
 ?>
-
+$res = mysqli_query($conn, 'SELECT * FROM newbook');
 ?>
 <br>
 <div class="container" bg-white mx-auto rounded-lg shadow mt-3 p-4 mb-3">
@@ -58,3 +58,4 @@ mysqli_close($conn);
 ?>
     </body>
 </html>
+

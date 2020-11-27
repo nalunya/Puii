@@ -2,11 +2,10 @@
  include('connect.php');
  $name=$_POST['name'];
  $height=$_POST['height'];     $weight=$_POST['weight'];
-$height=$height/100;
-  $bmi=$weight/($height*$height);
-bmit=number_format("$bmi",2);
+$height1=$height/100;
+  $bmi=$weight/($height1*$height1);
  $sql="INSERT INTO newbook (name,height, weight,bmi)
-VALUES ('".$name."', '".$height."', '".$weight."','".bmit."')";
+VALUES ('".$name."', '".$height."', '".$weight."','".bmi."')";
  $result=mysqli_query($conn,$sql);
  if($result){
    echo "<script>alert('เพิ่มข้อมูลสำเร็จ')<script>";

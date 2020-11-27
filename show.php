@@ -17,7 +17,7 @@ include('connect.php');
 
   <tbody>
 <?php
-$sql="SELECT * FROM nalunya220;"
+$sql="SELECT * FROM test;"
 $result=mysqli_query($conn,$sql);
 if(mysqli_num_rows($result) > 0){
 while(mysqli_fetch_array($result)){

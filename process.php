@@ -3,7 +3,7 @@
  $a=$_POST['a'];
  $b=$_POST['b'];
  $c=$a+$b;
- $sql="INSERT INTO Nalunya (A, B, C)
+ $sql="INSERT INTO test (A, B, C)
 VALUES ('".$a."', '".$b."', '".$c."')";
  $result=mysqli_query($conn,$sql);
  if($result){
